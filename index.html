@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tech Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #0f0f0f 0%, #020202 100%);
+      color: #00f2ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 430px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #00f2ff;
+      box-shadow: 0 0 25px #00f2ff;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+    }
+
+    .header {
+      background: #00f2ff10;
+      text-align: center;
+      padding: 30px 20px;
+      border-bottom: 1px solid #00f2ff;
+    }
+
+    .header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #00f2ff;
+      box-shadow: 0 0 15px #00f2ff;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      color: #00f2ff;
+    }
+
+    .header p {
+      font-size: 13px;
+      color: #88ffff;
+    }
+
+    .section {
+      padding: 18px 20px;
+      font-weight: bold;
+      font-size: 17px;
+      background-color: #001f29;
+      color: #00f2ff;
+      border-top: 1px solid #003f50;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .section:hover {
+      background-color: #003542;
+    }
+
+    .content {
+      display: none;
+      padding: 20px;
+      background-color: #000e14;
+      animation: fadeIn 0.4s ease-in;
+    }
+
+    .line {
+      background: #001a25;
+      border: 2px solid #00f2ff33;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      padding: 12px 15px;
+      font-size: 14px;
+      color: #ccfaff;
+      box-shadow: inset 0 0 10px #00f2ff11, 0 0 5px #00f2ff66;
+      transition: 0.3s ease-in-out;
+    }
+
+    .line i {
+      margin-right: 10px;
+      color: #00f2ff;
+    }
+
+    .line:hover {
+      background: #003644;
+      transform: scale(1.03);
+    }
+
+    .active + .content {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <img src="image/kenneth.jpg" alt="Profile Picture">
+      <h1>John Kenneth Patalla</h1>
+      <p><i class="fas fa-phone"></i> 09273751561<br><i class="fas fa-envelope"></i> kennethpatalla6@gmail.com</p>
+    </div>
+
+    <div class="section"><i class="fas fa-microchip"></i> Personal Info</div>
+    <div class="content">
+      <div class="line"><i class="fas fa-user"></i><strong>Name:</strong> Patalla, John Kenneth B.</div>
+      <div class="line"><i class="fas fa-birthday-cake"></i><strong>Age:</strong> 20</div>
+      <div class="line"><i class="fas fa-map-marker-alt"></i><strong>Address:</strong> Brgy Bungoy, Dolores, Quezon</div>
+    </div>
+
+    <div class="section"><i class="fas fa-graduation-cap"></i> Education</div>
+    <div class="content">
+      <div class="line"><i class="fas fa-school"></i><strong>Elementary:</strong> Recto Central Elementary School</div>
+      <div class="line"><i class="fas fa-university"></i><strong>High School:</strong> Recto National High School</div>
+    </div>
+
+    <div class="section"><i class="fas fa-award"></i> Qualification</div>
+    <div class="content">
+      <div class="line"><i class="fas fa-certificate"></i><strong>Dean's Lister:</strong> 2023 - 2024</div>
+    </div>
+
+    <div class="section"><i class="fas fa-cogs"></i> Skills</div>
+    <div class="content">
+      <div class="line"><i class="fas fa-lightbulb"></i> Decision Making</div>
+      <div class="line"><i class="fas fa-brain"></i> Problem Solving</div>
+      <div class="line"><i class="fas fa-clock"></i> Time Management</div>
+    </div>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+      section.addEventListener('click', () => {
+        section.classList.toggle('active');
+        sections.forEach(other => {
+          if (other !== section) other.classList.remove('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
